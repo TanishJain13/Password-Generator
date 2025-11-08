@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator By Tanish</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>🔐 Advanced Password Generator By Tanish</h2>
+      
+      <div class="password-display">
+        <input type="text" placeholder="Generate a Password" id="password" readonly />
+        <button class="btn2 copy-btn" title="Copy to Clipboard">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+        </button>
+      </div>
+
+      <div class="settings">
+        <div class="setting-item length-control">
+          <label for="length">Password Length</label>
+          <div class="length-output">
+            <input type="range" id="length" min="4" max="32" value="12" />
+            <span id="length-value">12</span>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <label for="include-uppercase">Include Uppercase Letters (A-Z)</label>
+          <input type="checkbox" id="include-uppercase" checked />
+        </div>
+        <div class="setting-item">
+          <label for="include-lowercase">Include Lowercase Letters (a-z)</label>
+          <input type="checkbox" id="include-lowercase" checked />
+        </div>
+        <div class="setting-item">
+          <label for="include-numbers">Include Numbers (0-9)</label>
+          <input type="checkbox" id="include-numbers" checked />
+        </div>
+        <div class="setting-item">
+          <label for="include-symbols">Include Symbols (!@#$%)</label>
+          <input type="checkbox" id="include-symbols" />
+        </div>
+      </div>
+      
+      <button class="btn1 generate-btn">Generate Password</button>
+
+      <div id="copy-message" class="copy-message">Copied!</div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

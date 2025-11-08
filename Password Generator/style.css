@@ -1,0 +1,199 @@
+/* Custom Properties/Variables */
+:root {
+  --main-bg-color: #0d1117; /* GitHub Dark Theme Background */
+  --container-bg: #161b22; /* Darker container */
+  --primary-color: #238636; /* Vibrant Green for actions/accents */
+  --text-color: #c9d1d9;
+  --input-bg: #21262d;
+  --border-color: #30363d;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Global Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--main-bg-color);
+  color: var(--text-color);
+}
+
+/* Container */
+.container {
+  background: var(--container-bg);
+  padding: 35px;
+  width: min(90%, 500px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.container h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Password Display Area */
+.password-display {
+    display: flex;
+    margin-bottom: 25px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+#password {
+  flex-grow: 1;
+  padding: 15px 20px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  user-select: text; /* Allow selection for copy */
+  caret-color: transparent; /* Hide cursor */
+}
+
+.copy-btn {
+    width: 60px;
+    background-color: var(--primary-color);
+    color: var(--container-bg);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Override default button padding */
+}
+
+.copy-btn:hover {
+    background-color: #2ea44f;
+}
+
+/* Settings Checkboxes */
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-item label {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* Length Slider Styling */
+.length-control {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.length-output {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#length {
+    flex-grow: 1;
+    margin-right: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+#length::-webkit-slider-runnable-track {
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+#length::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-top: -4px; /* Center thumb vertically */
+    cursor: grab;
+    transition: background 0.2s;
+}
+
+#length-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 25px;
+    text-align: right;
+}
+
+
+/* Generate Button */
+.generate-btn {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: var(--container-bg);
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.generate-btn:hover {
+    background-color: #2ea44f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* Copy Confirmation Message */
+.copy-message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-message.show {
+    opacity: 1;
+}
